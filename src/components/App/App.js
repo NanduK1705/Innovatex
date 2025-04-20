@@ -7,6 +7,7 @@ import Nav from '../Nav/Nav';
 import HackathonList from '../HackathonList/HackathonList';
 import HacksForYou from '../HacksForYou/HacksForYou'
 import Footer from '../Footer/Footer';
+import Helpdesk from '../HelpDesk/helpdesk';
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
         <Route path='/hacklist' element={<HackathonList/>}/>
         <Route path='/hoi' element={<HacksForYou/>}/>
         <Route path='/helo' element={<Footer/>}/>
+        <Route path='/helpdesk' element={<Helpdesk />} />
         </Routes>
     </Router>
   )

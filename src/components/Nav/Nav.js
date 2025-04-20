@@ -10,7 +10,7 @@ const Nav = () => {
         <div className="avail">
             <div>Join a hackathon</div>
             <div>Host a hackathon</div>
-            <div>Resources</div>
+            <Link to='/helpdesk'><div>Resources</div></Link> 
         </div>
         <div className="reg">
             <Link to='/login'><div>Log in</div></Link>

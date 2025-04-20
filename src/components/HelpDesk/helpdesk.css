@@ -1,0 +1,62 @@
+.helpdesk-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding:6rem 2rem 2rem;
+  font-family: Arial, sans-serif;
+}
+
+.helpdesk-section {
+  margin-bottom: 3rem;
+}
+
+.helpdesk-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.helpdesk-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.helpdesk-card {
+  flex: 1 1 calc(33.333% - 1rem); /* 👈 This ensures 3 in a row */
+  background-color: #f9f9f9;
+  border: 1px solid #e1e1e1;
+  border-radius: 6px;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.helpdesk-card:hover {
+  transform: translateY(-5px);
+}
+
+.helpdesk-title {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+
+.helpdesk-articles {
+  font-size: 0.9rem;
+  color: #00aaff;
+}
+
+@media (max-width: 900px) {
+  .helpdesk-card {
+    flex: 1 1 calc(50% - 1rem);
+  }
+}
+
+@media (max-width: 600px) {
+  .helpdesk-card {
+    flex: 1 1 100%;
+  }
+}

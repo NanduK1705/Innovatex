@@ -28,7 +28,6 @@ Your next big breakthrough starts here!</p>
         
     </div>
     <HacksForYou/>
-    {/* <Link to='/hi'><button>click</button></Link> */}
     {/* <Link to='/hlo'><button>click</button></Link>
     <Link to='/hoi'><button>click</button></Link> */}
     <Footer/>

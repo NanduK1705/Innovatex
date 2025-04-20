@@ -15,3 +15,11 @@
     flex-direction: row;
     justify-content: center;
 }
+.avail a {
+    text-decoration: none;
+    color: inherit;
+    
+  }
+.avail a:hover{
+    color: blue;
+}
