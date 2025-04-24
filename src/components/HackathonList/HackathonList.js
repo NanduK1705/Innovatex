@@ -14,6 +14,7 @@ const hackathons = [
     tags: ["Salesforce", "Machine Learning", "Beginner Friendly"],
     date: "Mar 05 - Apr 30, 2025",
     image: "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/003/278/434/datas/medium_square.png",
+    isOrganizationHosted: true,
   },
   {
     title: "Meta Horizon Creator Competition",
@@ -24,6 +25,7 @@ const hackathons = [
     tags: ["Meta", "AR/VR", "Creative Tech"],
     date: "Apr 01 - Apr 25, 2025",
     image: "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/003/295/852/datas/medium_square.jpg",
+    isOrganizationHosted: true,
   },
   {
     title: "Meta Hack XR Challenge",
@@ -34,6 +36,7 @@ const hackathons = [
     tags: ["Meta", "XR", "Beginner"],
     date: "Apr 01 - Apr 20, 2025",
     image: "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/003/319/065/datas/medium_square.png",
+    isOrganizationHosted: false,
   },
   {
     title: "Cloud Builder Sprint",
@@ -44,6 +47,7 @@ const hackathons = [
     tags: ["Cloud", "DevOps", "Infrastructure"],
     date: "Apr 01 - Apr 15, 2025",
     image: "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/003/219/991/datas/medium_square.png",
+    isOrganizationHosted: true,
   },
 ];
 
@@ -99,11 +103,11 @@ const HackathonList = () => {
     <h3>Length</h3>
     <div className="filter-item">
       <input type="checkbox" id="short" />
-      <label htmlFor="short">1–6 days</label>
+      <label htmlFor="short">1-6 days</label>
     </div>
     <div className="filter-item">
       <input type="checkbox" id="medium" />
-      <label htmlFor="medium">1–4 weeks</label>
+      <label htmlFor="medium">1-4 weeks</label>
     </div>
     <div className="filter-item">
       <input type="checkbox" id="long" />
@@ -161,38 +165,42 @@ const HackathonList = () => {
 </aside>
 
 
-      <main className="main-content">
-        
+<main className="main-content">
+          <div className="search-container">
+            <input type="text" placeholder="Search by hackathon title or keyword" />
+            <button>Search</button>
+          </div>
 
-        <div className="search-container">
-          <input type="text" placeholder="Search by hackathon title or keyword" />
-          <button>Search</button>
-        </div>
-
-        <div className="cards-wrapper">
-          {hackathons.map((hackathon, index) => (
-            <div className="card" key={index}>
-              <img src={hackathon.image} alt="Hackathon" />
-              <div className="card-content">
-                <div className="card-title">{hackathon.title}</div>
-                <div className="meta">{hackathon.timeLeft}</div>
-                <div className="info">{hackathon.location}</div>
-                <div className="info">{hackathon.prize}</div>
-                <div className="info">{hackathon.participants}</div>
-                <div className="tags">
-                  {hackathon.tags.map((tag, idx) => (
-                    <span className="tag" key={idx}>{tag}</span>
-                  ))}
+          <div className="cards-wrapper">
+            {hackathons.map((hackathon, index) => (
+              <div className="card" key={index}>
+                {hackathon.isOrganizationHosted && (
+                  <img
+                    src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                    alt="Verified Organization"
+                    className="tick-icon"
+                  />
+                )}
+                <img src={hackathon.image} alt="Hackathon" />
+                <div className="card-content">
+                  <div className="card-title">{hackathon.title}</div>
+                  <div className="meta">{hackathon.timeLeft}</div>
+                  <div className="info">{hackathon.location}</div>
+                  <div className="info">{hackathon.prize}</div>
+                  <div className="info">{hackathon.participants}</div>
+                  <div className="tags">
+                    {hackathon.tags.map((tag, idx) => (
+                      <span className="tag" key={idx}>{tag}</span>
+                    ))}
+                  </div>
+                  <div className="card-date">{hackathon.date}</div>
                 </div>
-                <div className="card-date">{hackathon.date}</div>
               </div>
-            </div>
-          ))}
-        </div>
-      </main>
-    </div>
+            ))}
+          </div>
+        </main>
+      </div>
     </>
-   
   );
 };
 

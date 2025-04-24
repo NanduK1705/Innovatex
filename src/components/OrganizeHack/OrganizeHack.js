@@ -20,6 +20,8 @@ const OrganizeHack = () => {
     website: '',
   });
 
+  const [uploadedFiles, setUploadedFiles] = useState([]);
+
   const modes = ['Online', 'Offline', 'Hybrid'];
   const techOptions = ['React', 'Node.js', 'Python', 'Flutter', 'Java'];
 
@@ -36,110 +38,150 @@ const OrganizeHack = () => {
     }));
   };
 
+  const handleFileChange = (e) => {
+    setUploadedFiles(Array.from(e.target.files));
+  };
+
+  const removeFile = (indexToRemove) => {
+    setUploadedFiles((prev) => prev.filter((_, index) => index !== indexToRemove));
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Submitted:', form);
+    console.log('Uploaded Files:', uploadedFiles);
     alert('Hackathon submitted successfully!');
   };
 
   return (
     <>
-    <Nav/>
-    <form onSubmit={handleSubmit} className="hackathon-form">
-      <h2>Post Your Hackathon</h2>
+      <Nav />
+      <form onSubmit={handleSubmit} className="hackathon-form">
+        <h2>Post Your Hackathon</h2>
 
-      <div className="form-group">
-        <label>Hackathon Title *</label>
-        <input type="text" name="title" value={form.title} onChange={handleChange} required />
-      </div>
-
-      <div className="form-group">
-        <label>Organized By *</label>
-        <input type="text" name="organizer" value={form.organizer} onChange={handleChange} required />
-      </div>
-
-      <div className="form-group">
-        <label>Event Date *</label>
-        <input type="date" name="date" value={form.date} onChange={handleChange} required />
-      </div>
-
-      <div className="form-group">
-        <label>Registration Deadline *</label>
-        <input type="date" name="registrationDeadline" value={form.registrationDeadline} onChange={handleChange} required />
-      </div>
-
-      <div className="form-group">
-        <label>Mode *</label>
-        <div className="radio-group">
-          {modes.map((mode) => (
-            <label key={mode}>
-              <input type="radio" name="mode" value={mode} checked={form.mode === mode} onChange={handleChange} />
-              {mode}
-            </label>
-          ))}
-        </div>
-      </div>
-
-      {(form.mode === 'Offline' || form.mode === 'Hybrid') && (
         <div className="form-group">
-          <label>Location *</label>
-          <input type="text" name="location" value={form.location} onChange={handleChange} required />
+          <label>Hackathon Title *</label>
+          <input type="text" name="title" value={form.title} onChange={handleChange} required />
         </div>
-      )}
 
-      <div className="form-group">
-        <label>Tech Stack *</label>
-        <div className="tech-stack">
-          {techOptions.map((tech) => (
-            <button
-              type="button"
-              key={tech}
-              onClick={() => handleTechToggle(tech)}
-              className={form.techStack.includes(tech) ? 'active' : ''}
-            >
-              {tech}
-            </button>
-          ))}
+        <div className="form-group">
+          <label>Organized By *</label>
+          <input type="text" name="organizer" value={form.organizer} onChange={handleChange} required />
         </div>
-      </div>
 
-      <div className="form-group">
-        <label>Description *</label>
-        <textarea name="description" value={form.description} onChange={handleChange} required></textarea>
-      </div>
+        <div className="form-group">
+          <label>Event Date *</label>
+          <input type="date" name="date" value={form.date} onChange={handleChange} required />
+        </div>
 
-      <div className="form-group">
-        <label>Eligibility Criteria *</label>
-        <input type="text" name="eligibility" value={form.eligibility} onChange={handleChange} required />
-      </div>
+        <div className="form-group">
+          <label>Registration Deadline *</label>
+          <input type="date" name="registrationDeadline" value={form.registrationDeadline} onChange={handleChange} required />
+        </div>
 
-      <div className="form-group">
-        <label>Prizes Summary *</label>
-        <input type="text" name="prizes" value={form.prizes} onChange={handleChange} required />
-      </div>
+        <div className="form-group">
+          <label>Mode *</label>
+          <div className="radio-group">
+            {modes.map((mode) => (
+              <label key={mode}>
+                <input type="radio" name="mode" value={mode} checked={form.mode === mode} onChange={handleChange} />
+                {mode}
+              </label>
+            ))}
+          </div>
+        </div>
 
-      <div className="form-group">
-        <label>Contact Email or Phone *</label>
-        <input type="text" name="contact" value={form.contact} onChange={handleChange} required />
-      </div>
+        {(form.mode === 'Offline' || form.mode === 'Hybrid') && (
+          <div className="form-group">
+            <label>Location *</label>
+            <input type="text" name="location" value={form.location} onChange={handleChange} required />
+          </div>
+        )}
 
-      <div className="form-group">
-        <label>Team Size Limit *</label>
-        <input type="number" name="teamSize" value={form.teamSize} onChange={handleChange} required />
-      </div>
+        <div className="form-group">
+          <label>Tech Stack *</label>
+          <div className="tech-stack">
+            {techOptions.map((tech) => (
+              <button
+                type="button"
+                key={tech}
+                onClick={() => handleTechToggle(tech)}
+                className={form.techStack.includes(tech) ? 'active' : ''}
+              >
+                {tech}
+              </button>
+            ))}
+          </div>
+        </div>
 
-      <div className="form-group">
-        <label>Judging Criteria *</label>
-        <textarea name="judgingCriteria" value={form.judgingCriteria} onChange={handleChange} required></textarea>
-      </div>
+        <div className="form-group">
+          <label>Description *</label>
+          <textarea name="description" value={form.description} onChange={handleChange} required></textarea>
+        </div>
 
-      <div className="form-group">
-        <label>Website/Registration Link *</label>
-        <input type="url" name="website" value={form.website} onChange={handleChange} required />
-      </div>
+        <div className="form-group">
+          <label>Eligibility Criteria *</label>
+          <input type="text" name="eligibility" value={form.eligibility} onChange={handleChange} required />
+        </div>
 
-      <button type="submit" className="submit-btn">Submit Hackathon</button>
-    </form>
+        <div className="form-group">
+          <label>Prizes Summary *</label>
+          <input type="text" name="prizes" value={form.prizes} onChange={handleChange} required />
+        </div>
+
+        <div className="form-group">
+          <label>Contact Email or Phone *</label>
+          <input type="text" name="contact" value={form.contact} onChange={handleChange} required />
+        </div>
+
+        <div className="form-group">
+          <label>Team Size Limit *</label>
+          <input type="number" name="teamSize" value={form.teamSize} onChange={handleChange} required />
+        </div>
+
+        <div className="form-group">
+          <label>Judging Criteria *</label>
+          <textarea name="judgingCriteria" value={form.judgingCriteria} onChange={handleChange} required></textarea>
+        </div>
+
+        <div className="form-group">
+          <label>Website/Registration Link *</label>
+          <input type="url" name="website" value={form.website} onChange={handleChange} required />
+        </div>
+
+        {/* Document Upload Field */}
+        <div className="form-group">
+          <label>Upload Documents (PDF, DOCX, etc.)</label>
+          <input
+            type="file"
+            multiple
+            accept=".pdf,.doc,.docx"
+            onChange={handleFileChange}
+          />
+          <ul>
+            {uploadedFiles.map((file, index) => (
+              <li key={index}>
+                {file.name}
+                <button
+                  type="button"
+                  onClick={() => removeFile(index)}
+                  style={{
+                    marginLeft: '10px',
+                    color: 'red',
+                    background: 'none',
+                    border: 'none',
+                    cursor: 'pointer'
+                  }}
+                >
+                  ✕
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <button type="submit" className="submit-btn">Submit Hackathon</button>
+      </form>
     </>
   );
 };

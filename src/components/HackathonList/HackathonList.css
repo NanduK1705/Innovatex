@@ -181,3 +181,18 @@ select {
   color: #9ca3af;
   margin-top: 8px;
 }
+
+
+.tick-icon {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 25px !important;;
+  height: 25px !important;;
+  z-index: 2;
+  object-fit: contain;
+}
+
+.card {
+  position: relative;
+}
