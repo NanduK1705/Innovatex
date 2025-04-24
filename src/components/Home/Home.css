@@ -1,49 +1,74 @@
-*{
-    padding: 0;
-    margin: 0;
+/* Home.css */
+
+.bg {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3rem 10%;
+  background: linear-gradient(135deg, #1f2937, #111827); /* dark gradient */
+  color: #ffffff;
+  flex-wrap: wrap;
 }
 
-.reg{
-    display: flex;
-    gap: 50px;
-    font-size: 19px;
-}
-/* body{
-    background-color: rgb(244, 244, 252);
-} */
-.avail{
-    display: flex;
-    gap: 100px;
-    font-size: 19px;
+.txt {
+  max-width: 600px;
 }
 
-.bg{
-    display: flex;
-    justify-content: space-between;
-    margin-top: 60px;
+.txt h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #facc15; /* Tailwind's yellow-400 */
 }
 
-.txt{
-display: flex;
-flex-direction: column;
-justify-content: center;
-margin-left: 100px;
-/* width: 500px; */
-
+.txt p {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  margin-bottom: 2rem;
+  color: #e5e7eb; /* Tailwind's gray-200 */
 }
 
-.txt p{
-    font-size: 18px;
+.explore-btn {
+  background-color: #3b82f6; /* Tailwind blue-500 */
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
-.bg div img{
-    /* width: 100%; */
-    height: 500px;
 
-    object-fit: contain;
+.explore-btn:hover {
+  background-color: #2563eb; /* Tailwind blue-600 */
 }
 
-/* .explore{
-    background-image: url(/assets/home/bg-texture-transparency-3b324e5….png), linear-gradient(to top left, #6373E0, #1F78D1, #23A197);
-    width: 200px;
-    height: 200px;
-} */
+.image-container {
+  max-width: 500px;
+  width: 100%;
+}
+
+.image-container img {
+  width: 100%;
+  border-radius: 1rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive styles */
+@media screen and (max-width: 900px) {
+  .bg {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .txt {
+    max-width: 100%;
+  }
+
+  .image-container {
+    margin-bottom: 2rem;
+  }
+}

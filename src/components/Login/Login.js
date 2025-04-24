@@ -9,15 +9,15 @@ const Login = () => {
 <Nav/>
 <div class='sid'>
         <div class='wel'>
-            <h1>Welcome Back!</h1>
-            <p style={{fontSize:'15px', lineHeight:'3'}}>Sign up now and be part of our community.</p>
+            <h1 style={{marginBottom:'10px'}}>Welcome Back!</h1>
+            <p style={{fontSize:'15px',marginTop:'0', lineHeight:'3'}}>Sign up now and be part of our community.</p>
             <Link to='/signup'><button>SIGN UP</button></Link>
         </div>
         <div class='sign'>
             <h1>Log in to InnovateX</h1>
             <input placeholder='Email'/><br/>
             <input placeholder='Password'/>
-            <p style={{padding: '0', margin: '0', display: 'flex', justifyContent: 'center', marginRight: '160px', lineHeight: '1', textDecoration: 'underline', color: 'hotpink'}}>forgot password?</p>
+            <p style={{padding: '0', margin: '0', display: 'flex', justifyContent: 'center', marginRight: '160px', lineHeight: '1', textDecoration: 'underline', color: 'blue',cursor:'pointer'}}>forgot password?</p>
             <button>LOG IN</button>
             {/* <div>
                 <p style="padding: 0; margin: 0; display: flex; justify-content: center; line-height: 2;">other options</p>

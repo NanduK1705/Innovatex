@@ -9,8 +9,8 @@ const Signup = () => {
     <Nav/>
 <div class='sid'>
         <div class='wel'>
-            <h1>Welcome To InnovateX!</h1>
-            <p style={{fontSize:'15px', lineHeight:'3'}}>To keep connected with us please login with your personal info</p>
+            <h1 style={{marginBottom:'10px'}}>Welcome To InnovateX!</h1>
+            <p style={{fontSize:'15px',marginTop:'0', lineHeight:'3'}}>To keep connected with us please login with your personal info</p>
             <Link to='/login'><button>SIGN IN</button></Link>
         </div>
         <div class='sign'>

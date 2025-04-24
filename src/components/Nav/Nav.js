@@ -1,25 +1,28 @@
-import React from 'react'
+import React from 'react';
 import './Nav.css';
 import { Link } from 'react-router-dom';
 
-
 const Nav = () => {
   return (
-    <div className="nav">
-        <div><Link to='/'><h2>InnovateX</h2></Link></div>
-        <div className="avail">
-            <div>Join a hackathon</div>
-            <div>Host a hackathon</div>
-            <div>Resources</div>
-        </div>
-        <div className="reg">
-            <Link to='/login'><div>Log in</div></Link>
-            <div>
-                <Link to='/signup'><button>Sign up</button></Link>
-            </div>
-        </div>
-    </div>
-  )
-}
+    <nav className="nav">
+      <div className="logo">
+        <Link to="/"><h2>InnovateX</h2></Link>
+      </div>
 
-export default Nav
+      <div className="avail">
+        <Link to="/hacklist"><div>Join a hackathon</div></Link>
+        <Link to="/helo"><div>Host a hackathon</div></Link>
+        <Link to="/resources"><div>Resources</div></Link>
+      </div>
+
+      <div className="reg">
+        <Link to="/login"><div className="login">Log in</div></Link>
+        <Link to="/signup">
+          <button className="signup-btn">Sign up</button>
+        </Link>
+      </div>
+    </nav>
+  );
+};
+
+export default Nav;
