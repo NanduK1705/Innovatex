@@ -83,3 +83,11 @@
     margin-bottom: 0.5rem;
   }
 }
+.avail a {
+    text-decoration: none;
+    color: inherit;
+    
+  }
+.avail a:hover{
+    color: blue;
+}

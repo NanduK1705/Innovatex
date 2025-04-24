@@ -7,6 +7,7 @@ import HackathonList from '../HackathonList/HackathonList';
 import HacksForYou from '../HacksForYou/HacksForYou'
 import HackathonDetails from '../HackathonDetails/HackathomDetails';
 import OrganizeHack from '../OrganizeHack/OrganizeHack';
+import Helpdesk from '../HelpDesk/helpdesk';
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <Route path='/hoi' element={<HacksForYou/>}/>
         <Route path='/hi' element={<HackathonDetails/>}/>
         <Route path='/helo' element={<OrganizeHack/>}/>
+        <Route path='/helpdesk' element={<Helpdesk />} />
         </Routes>
     </Router>
   )

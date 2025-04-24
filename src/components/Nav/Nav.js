@@ -12,7 +12,7 @@ const Nav = () => {
       <div className="avail">
         <Link to="/hacklist"><div>Join a hackathon</div></Link>
         <Link to="/helo"><div>Host a hackathon</div></Link>
-        <Link to="/resources"><div>Resources</div></Link>
+        <Link to="/helpdesk"><div>Help Desk</div></Link>
       </div>
 
       <div className="reg">

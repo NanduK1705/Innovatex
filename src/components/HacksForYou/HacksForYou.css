@@ -26,6 +26,7 @@ src/HackathonList/HackathonList.css
   
   .category-item:hover {
     background-color: #ced4da;
+    color: black;
   }
   
 
@@ -91,6 +92,8 @@ src/HackathonList/HackathonList.css
   
   .crd-content {
     padding: 15px;
+        color: black;
+
      }
  .grd{
     display: grid;
