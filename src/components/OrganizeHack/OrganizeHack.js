@@ -180,7 +180,7 @@ const OrganizeHack = () => {
           </ul>
         </div>
 
-        <button type="submit" className="submit-btn">Submit Hackathon</button>
+        <button type="submit" className="submit-btn">Post Hackathon</button>
       </form>
     </>
   );

@@ -30,7 +30,7 @@
 }
 
 .explore-btn {
-  background-color: #3b82f6; /* Tailwind blue-500 */
+  background-color: blueviolet; /* Tailwind blue-500 */
   color: white;
   padding: 0.75rem 1.5rem;
   border: none;
@@ -42,7 +42,7 @@
 }
 
 .explore-btn:hover {
-  background-color: #2563eb; /* Tailwind blue-600 */
+  background-color: rgb(149, 65, 229); /* Tailwind blue-600 */
 }
 
 .image-container {

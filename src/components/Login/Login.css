@@ -13,7 +13,7 @@
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);}
 
 .wel{
-    background-color: #10b981;
+    background-color: blueviolet;
     height: 600px;
     display: flex;
     flex-direction: column;
@@ -34,7 +34,7 @@
 
 .sign{
     line-height: 50px;
-    color: #10b981;
+    color: blueviolet;
 }
 
 .sign input{
@@ -43,7 +43,7 @@
 }
 
 .sign button{
-    background-color: #10b981;
+    background-color: blueviolet;
     border: 1px solid black;
     padding: 10px 38px;
     border-radius: 18px;

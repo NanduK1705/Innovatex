@@ -1,11 +1,14 @@
 // src/components/HackathonList.js
 import React from "react";
 import "./HackathonList.css";
+import { Link } from "react-router-dom";
 import Nav from "../Nav/Nav";
+import Footer from "../Footer/Footer";
 
 
 const hackathons = [
   {
+    id: "agentforce",
     title: "Agentforce Virtual Hackathon",
     timeLeft: "20 days left",
     location: "Online",
@@ -17,6 +20,7 @@ const hackathons = [
     isOrganizationHosted: true,
   },
   {
+    id: "metahorizon",
     title: "Meta Horizon Creator Competition",
     timeLeft: "15 days left",
     location: "Online",
@@ -28,6 +32,7 @@ const hackathons = [
     isOrganizationHosted: true,
   },
   {
+    id: "metaxr",
     title: "Meta Hack XR Challenge",
     timeLeft: "12 days left",
     location: "Online",
@@ -35,10 +40,11 @@ const hackathons = [
     participants: "4000 participants",
     tags: ["Meta", "XR", "Beginner"],
     date: "Apr 01 - Apr 20, 2025",
-    image: "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/003/319/065/datas/medium_square.png",
     isOrganizationHosted: false,
+    image: "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/003/319/065/datas/medium_square.png",
   },
   {
+    id: "cloudbuilder",
     title: "Cloud Builder Sprint",
     timeLeft: "10 days left",
     location: "Online",
@@ -46,11 +52,56 @@ const hackathons = [
     participants: "2800 participants",
     tags: ["Cloud", "DevOps", "Infrastructure"],
     date: "Apr 01 - Apr 15, 2025",
-    image: "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/003/219/991/datas/medium_square.png",
     isOrganizationHosted: true,
+    image: "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/003/219/991/datas/medium_square.png",
   },
 ];
-
+// const hackathons = [
+//   {
+//     title: "Agentforce Virtual Hackathon",
+//     timeLeft: "20 days left",
+//     location: "Online",
+//     prize: "₹1,40,000 in prizes",
+//     participants: "5922 participants",
+//     tags: ["Salesforce", "Machine Learning", "Beginner Friendly"],
+//     date: "Mar 05 - Apr 30, 2025",
+//     image: "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/003/278/434/datas/medium_square.png",
+//     isOrganizationHosted: true,
+//   },
+//   {
+//     title: "Meta Horizon Creator Competition",
+//     timeLeft: "15 days left",
+//     location: "Online",
+//     prize: "₹50,000 in prizes",
+//     participants: "3500 participants",
+//     tags: ["Meta", "AR/VR", "Creative Tech"],
+//     date: "Apr 01 - Apr 25, 2025",
+//     image: "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/003/295/852/datas/medium_square.jpg",
+//     isOrganizationHosted: true,
+//   },
+//   {
+//     title: "Meta Hack XR Challenge",
+//     timeLeft: "12 days left",
+//     location: "Online",
+//     prize: "₹75,000 in prizes",
+//     participants: "4000 participants",
+//     tags: ["Meta", "XR", "Beginner"],
+//     date: "Apr 01 - Apr 20, 2025",
+//     image: "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/003/319/065/datas/medium_square.png",
+//     isOrganizationHosted: false,
+//   },
+//   {
+//     title: "Cloud Builder Sprint",
+//     timeLeft: "10 days left",
+//     location: "Online",
+//     prize: "₹30,000 in prizes",
+//     participants: "2800 participants",
+//     tags: ["Cloud", "DevOps", "Infrastructure"],
+//     date: "Apr 01 - Apr 15, 2025",
+//     image: "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/003/219/991/datas/medium_square.png",
+//     isOrganizationHosted: true,
+//   },
+// ];
 
 
 const HackathonList = () => {
@@ -183,14 +234,18 @@ const HackathonList = () => {
                 )}
                 <img src={hackathon.image} alt="Hackathon" />
                 <div className="card-content">
-                  <div className="card-title">{hackathon.title}</div>
+                  <div className="card-title">
+                    <Link to={`/hackathon/${hackathon.id}`}>{hackathon.title}</Link>
+                  </div>
                   <div className="meta">{hackathon.timeLeft}</div>
                   <div className="info">{hackathon.location}</div>
                   <div className="info">{hackathon.prize}</div>
                   <div className="info">{hackathon.participants}</div>
                   <div className="tags">
                     {hackathon.tags.map((tag, idx) => (
-                      <span className="tag" key={idx}>{tag}</span>
+                      <span className="tag" key={idx}>
+                        {tag}
+                      </span>
                     ))}
                   </div>
                   <div className="card-date">{hackathon.date}</div>
@@ -200,6 +255,7 @@ const HackathonList = () => {
           </div>
         </main>
       </div>
+      <Footer/>
     </>
   );
 };

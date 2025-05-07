@@ -1,0 +1,61 @@
+.hackathon-info-container {
+    max-width: 900px;
+    margin: 6rem auto 3rem;
+    margin-top: 20px;
+    padding: 2rem;
+    color: #f1f1f1;
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: blueviolet;
+  }
+  
+  .intro {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #ddd;
+  }
+  
+  .section {
+    margin-bottom: 2.5rem;
+  }
+  
+  .section h2 {
+    font-size: 1.5rem;
+    color: #66ccff;
+    border-left: 4px solid blueviolet;
+    padding-left: 12px;
+    margin-bottom: 1rem;
+  }
+  
+  .section p, .section ul {
+    font-size: 1rem;
+    color: #ccc;
+    line-height: 1.6;
+  }
+  
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.2rem;
+    position: relative;
+  }
+  
+  li::before {
+    content: "•";
+    color: blueviolet;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  

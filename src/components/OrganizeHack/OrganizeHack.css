@@ -89,7 +89,7 @@ textarea {
 .submit-btn {
   display: block;
   width: 100%;
-  background-color: #10b981; /* Tailwind green-500 */
+  background-color: blueviolet; /* Tailwind green-500 */
   color: white;
   padding: 0.75rem;
   font-size: 1.125rem;
@@ -102,7 +102,7 @@ textarea {
 }
 
 .submit-btn:hover {
-  background-color: #059669; /* Tailwind green-600 */
+  background-color: rgb(159, 79, 234); /* Tailwind green-600 */
 }
 
 /* Responsive layout */

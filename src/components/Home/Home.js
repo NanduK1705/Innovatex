@@ -23,6 +23,9 @@ const Home = () => {
           <Link to="/hacklist">
             <button className="explore-btn">Explore Hackathons</button>
           </Link>
+          <Link to="/about">
+            <button style={{marginLeft:'30px'}} className="explore-btn">New To Hackathons</button>
+          </Link>
         </div>
         <div className="image-container">
           <img src={hack} alt="Hackathon" />
@@ -30,7 +33,8 @@ const Home = () => {
       </div>
 <div style={{marginTop:'50px'}}></div>
       <HacksForYou />
-      <Link to='/hi'><button>click</button></Link>
+      <div style={{marginBottom:'50px'}}></div>
+
       <Footer />
     </div>
   );
